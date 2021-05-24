@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{ 
+    width: 100%;
+    min-height: 200vh; 
+    background-image: linear-gradient(to left,rgb(3, 3, 61),rgba(13, 13, 58, 0.836), rgb(17, 17, 51), rgb(27, 21, 41),rgb(17, 18, 39),rgb(15, 15, 34),rgb(3, 3, 15),rgb(3, 5, 15));
+}
+.intro{
+    display: flex;
+    width: 90%;
+    margin: auto;
+}
+#img2{
+    width: 15%;
+    height: 35%;
+}
+.intro-text{
+    color: rgb(226, 245, 224);
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+    flex: 3;
+    text-align: center;
+    padding: 5px;
+}
+.buttons{
+    height: 50%;
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    position: fixed;
+}
+.social-media{
+    display: flex;
+    height: auto;
+}
+#insta, #fb{
+    background-color: black;
+    border: none;
+}
+#insta-logo,#fb-logo{
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+}
+#insta-images{
+    width: 125%;
+    height: auto;
+    border-radius: 10px;
+}
+/*The effect*/
+.images{
+    width: 90%;
+    margin: auto;
+    width: 200px;
+    height: auto;
+    transform-style: preserve-3d;
+    animation: animate 30s linear infinite;
+}
+@keyframes animate{
+    0%{
+        transform: perspective(1000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(1000px) rotateY(360deg);
+    }
+}
+.images span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center;
+    transform-style: preserve-3d;
+    transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+}
+
+
+@media screen and (max-width: 1024px){
+    #img2{
+        width: 20%;
+        height: 40%;
+    }
+    .intro h1{
+        font-size: 30px;
+    }
+    #insta-logo, #fb-logo{
+        height: 20px;
+        width: 20px
+    }
+    #insta-images{
+        width: 50%;
+        height: auto;
+    }
+    .images span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i) * 45deg)) translateZ(100px);
+    }
+}
+
+
